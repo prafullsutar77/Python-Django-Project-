@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MOBILE DETAILS</title>
+</head>
+{%block baseblock%}
+<body>
+<div align="center" class="container">
+<h1 align="center"> Mobile Details</h1>
+{% if mobile_list %}
+<table border="1" margin="auto" align="center">
+  <tr>
+    <th>ID</th>
+    <th>Product Name</th>
+    <th>Product Price</th>
+    <th>Product Qnty</th>
+    </tr>
+    {% for prd in mobile_list %}
+    <tr>
+    <td>{{prd.id}}</td>
+    <td>{{prd.modelname}}</td>
+    <td>{{prd.modelprice}}</td>
+    <td>{{prd.modelqnty}}</td>
+  </tr>
+{%endfor %}
+</table>
+{%else%}
+<h1> No data Found</h1>
+{%endif%}
+<br>
+  <br>
+<a href="/electronics/mobile" class="btn btn-outline-success">Insert In Record</a>
+</div>
+</body>
+{%endblock%}
+</html>

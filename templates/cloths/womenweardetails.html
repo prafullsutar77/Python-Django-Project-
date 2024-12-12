@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Women Wear DETAILS</title>
+</head>
+{%block baseblock%}
+<body>
+<h1 align="center"> Women Wear Details</h1>
+{% if womenwear_list %}
+<table border="1" margin="auto" align="center">
+  <tr>
+    <th>ID</th>
+    <th>Product Name</th>
+    <th>Product Brand</th>
+    <th>Product Price</th>
+    <th>Product Qnty</th>
+    </tr>
+    {% for prd in womenwear_list %}
+    <tr>
+    <td>{{prd.id}}</td>
+    <td>{{prd.modelname}}</td>
+    <td>{{prd.modelbrand}}</td>
+    <td>{{prd.modelprice}}</td>
+    <td>{{prd.modelqnty}}</td>
+  </tr>
+{%endfor %}
+</table>
+{%else%}
+<h1> No data Found</h1>
+{%endif%}
+</body>
+{%endblock%}
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sliper DETAILS</title>
+</head>
+{%block baseblock%}
+<body>
+<h1 align="center"> Sliper Details</h1>
+{% if sliper_list %}
+<table border="1" margin="auto" align="center">
+  <tr>
+    <th>ID</th>
+    <th>Product Name</th>
+    <th>Product Color</th>
+    <th>Product Size</th>
+    <th>Product Price</th>
+    <th>Product Qnty</th>
+    </tr>
+    {% for prd in sliper_list %}
+    <tr>
+    <td>{{prd.id}}</td>
+    <td>{{prd.modelname}}</td>
+    <td>{{prd.modelcolor}}</td>
+    <td>{{prd.modelsize}}</td>
+    <td>{{prd.modelprice}}</td>
+    <td>{{prd.modelqnty}}</td>
+  </tr>
+{%endfor %}
+</table>
+{%else%}
+<h1> No data Found</h1>
+{%endif%}
+</body>
+{%endblock%}
+</html>
